@@ -1,0 +1,10 @@
+\chapter{Considerazioni sulla QKD e problematiche di sicurezza}
+L'effettivo utilizzo di tecniche quantistiche di questo tipo porta con se delle problematiche non indifferenti sia dal punto di vista della sicurezza che dal punto di vista implementativo. Di seguito sono riportati alcuni aspetti da tenere in considerazione \cite{chen_report_2016}:
+
+\begin{itemize}
+    \item Come accennato in precedenza, le chiavi scambiate con un protocollo di QKD possono essere utilizzate in algoritmi crittografici a chiave simmetrica per fornire integrità e autenticazione solo se si ha la certezza che la chiave quantistica (trasmissione di fotoni) provenga dall'entità desiderata. QKD non fornisce un mezzo per autenticare la sorgente di trasmissione. Pertanto, questa tecnologia a monte richiede l'uso di crittografia asimmetrica o di chiavi pre-condivise per fornire autenticazione tra le due parti.
+    
+    \item Per poter implementare il protocolli QKD è necessario possedere architetture hardware/software specifiche e queste potrebbero essere soggette a malfunzionamenti o vulnerabilità, le quali richiederebbero costanti aggiornamenti. Inoltre questa soluzione non può essere facilmente integrata nelle apparecchiature di rete già esistenti, poiché necessita di dispositivi poco comuni (es. modem ottico). In aggiunta a ciò, dato che questa tecnologia richiede l'utilizzo di strumenti affidabili, le operazioni di installazione e manutenzione comportano costi elevati.
+    
+    \item Il rischio di Denial of Service è molto alto. Difatti, ogni volta che un agente esterno opera sul canale quantistico (producendo del disturbo), è necessario che la procedura di generazione della chiave condivisa venga attuata nuovamente dall'inizio. Un continuo attacco di questo tipo potrebbe rendere inutilizzabile il canale, il quale è considerato uno SPOF (Single Point Of Failure).
+\end{itemize}

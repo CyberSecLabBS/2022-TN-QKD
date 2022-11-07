@@ -1,0 +1,90 @@
+\documentclass[a4paper, 12pt]{report}
+
+\usepackage{setspace}
+\usepackage[italian]{babel}
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{mdframed}
+\usepackage{comment}
+\usepackage{makecell}
+\usepackage{verbatim}
+
+%diminuisco lo spazio sopra il capitolo
+%-------------------------------------------
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{setspace}
+\doublespacing 
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\@makechapterhead}{50\p@}{0pt}{}{}
+\patchcmd{\@makeschapterhead}{50\p@}{0pt}{}{}
+\makeatother
+%-
+
+\usepackage[letterpaper, left=1in, right=1in, top=1in, bottom=1in]{geometry}
+
+\newenvironment{esempio}[2] [Esempio]
+    { \begin{mdframed} \textbf{#1 #2}}
+    {  \end{mdframed}}
+
+\renewcommand\thesection{\arabic{chapter}.\arabic{section}} %le sezioni partono da 1
+
+
+\title{Relazione di Sicurezza Informatica}
+\author{Tassi Nicola \\ Matricola 719008}
+\date{Laurea Magistrale in Ingegneria Informatica \\ A.A 2021 - 2022}
+
+
+\begin{document}
+\begin{spacing}{1.15}
+
+\begin{titlepage}
+    \begin{center}
+        \includegraphics[width=0.6\textwidth]{MainContent/img/intro/logo-Unibs.png}
+        
+        \LARGE
+        \textbf{Sicurezza Informatica}
+        
+        \vspace{0.8cm}
+        
+        \LARGE
+        Quantum Key Distribution (QKD)
+            
+        \vspace{2.5cm}
+        
+        Tassi Nicola \\ Matricola 719008
+            
+        \vfill
+        
+        \Large
+        UNIVERSITÁ DEGLI STUDI DI BRESCIA\\
+        Laurea Magistrale in Ingegneria Informatica\\
+        A.A. 2021 - 2022
+            
+    \end{center}
+\end{titlepage}
+
+%Indice
+\tableofcontents
+\addcontentsline{toc}{chapter}{Introduzione}
+\thispagestyle{empty}
+
+\include{MainContent/introduzione.tex}
+\include{MainContent/capitolo2}
+\include{MainContent/capitolo3}
+\include{MainContent/capitolo4}
+\include{MainContent/capitolo5}
+\include{MainContent/conclusione.tex}
+
+\addcontentsline{toc}{chapter}{Conclusione}
+
+\end{spacing}
+
+\nocite{*}
+\bibliographystyle{ieeetr}
+\bibliography{mybib}
+\end{document}
